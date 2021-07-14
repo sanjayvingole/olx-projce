@@ -1,0 +1,32 @@
+package com.olx.dto;
+
+public class UserDTO {
+	private String userName;
+	private Integer password;
+
+	public UserDTO() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public UserDTO(String userName, Integer password) {
+		this.userName = userName;
+		this.password = password;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public Integer getPassword() {
+		return password;
+	}
+
+	public void setPassword(Integer password) {
+		this.password = password;
+	}
+
+}

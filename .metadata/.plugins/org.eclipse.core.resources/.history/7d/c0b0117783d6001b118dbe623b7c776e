@@ -1,0 +1,55 @@
+package com.bank.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.bank.dto.Stock;
+
+@RestController
+@CrossOrigin(origins = "*")
+@RequestMapping(value = "/mymarketplace")
+public class StockController {
+
+	@GetMapping(value = "/stock", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Stock> getAllStocks() {
+		return stocks;
+	}
+
+	@GetMapping(value = "/stock/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Stock> getAllStocks(@PathVariable("id") int stockId) {
+		for (Stock stock : stocks) {
+			if (stock.getId() == stockId)
+				return stocks;
+		}
+		return null;
+	}
+
+	@PostMapping(value = "/stock", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Stock> createNewStock(@RequestBody Stock stock, @RequestHeader String authToken) {
+		System.out.println("authentication token " + authToken);
+		if ("ZENSAR".equals(authToken)) {
+			lastStockId = lastStockId + 1;
+			stock.setId(lastStockId);
+			stocks.add(stock);
+			return new ResponseEntity<Stock>(stock, HttpStatus.OK);
+		}
+		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+
+	}
+
+	static List<Stock> stocks = new ArrayList<>();
+
+	static int lastStockId = 0;
+}

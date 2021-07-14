@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="NewSpringBootDemo"/>
+<aop-project name="OLX-advertise"/>
+<aop-project name="OLX-masterdata"/>
+<aop-project name="OLX-login"/>
+<aop-project name="springBootDemo"/>
+</aop-reference-model>

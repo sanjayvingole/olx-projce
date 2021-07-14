@@ -1,0 +1,19 @@
+package com.olx.dto;
+
+public class CategoryDTO {
+	private Integer id;
+	private String category;
+	
+	public CategoryDTO() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public CategoryDTO(Integer id, String category) {
+		this.id = id;
+		this.category = category;
+	}
+	
+	
+	
+	
+}

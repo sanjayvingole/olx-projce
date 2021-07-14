@@ -1,0 +1,11 @@
+package com.olx.service;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+
+import com.olx.dto.UserDTO;
+
+public interface UserService {
+	public String authenticateUser(UserDTO userDTO, String authToken);
+}

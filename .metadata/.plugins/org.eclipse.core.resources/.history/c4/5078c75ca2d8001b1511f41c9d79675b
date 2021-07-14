@@ -1,0 +1,18 @@
+package com.olx.service;
+
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.olx.dto.UserDTO;
+
+public interface UserService {
+	String authenticateUser(UserDTO userDTO, String authToken);
+
+	public UserDTO registerUser(UserDTO userDTO);
+
+	public List<UserDTO> getuserDetail(String authToken);
+	
+	public List<UserDTO> getuserStatus(String status);
+}

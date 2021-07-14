@@ -1,0 +1,17 @@
+package com.olx.dto;
+
+public class StatusDTO {
+	private Integer id;
+	private String status;
+
+	public StatusDTO() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public StatusDTO(Integer id, String status) {
+		super();
+		this.id = id;
+		this.status = status;
+	}
+
+}

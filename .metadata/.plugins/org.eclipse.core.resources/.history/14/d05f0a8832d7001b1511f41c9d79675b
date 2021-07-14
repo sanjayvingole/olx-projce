@@ -1,0 +1,9 @@
+package com.olx.controller;
+
+import org.springframework.http.ResponseEntity;
+
+import com.olx.dto.Advertise;
+
+public class AdvertiseController {
+	
+}

@@ -1,0 +1,50 @@
+package com.olx;
+
+import java.util.ArrayList;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
+import springfox.documentation.service.VendorExtension;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+@SpringBootApplication
+@EnableSwagger2
+public class OlxAdvertiseApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(OlxAdvertiseApplication.class, args);
+	}
+	
+	@Bean
+	public Docket getCustomDocket() {
+		return new Docket(DocumentationType.SWAGGER_2)
+		.select()
+		//.paths(PathSelectors.ant("/mymarketplace/"))
+		.paths(PathSelectors.any())
+		.apis(RequestHandlerSelectors.basePackage("com.bank"))
+		.build()
+		.apiInfo(getApiInfo());
+	}
+	
+	private ApiInfo getApiInfo() {
+		return new ApiInfo(
+				"Stock Rest API Documentation",
+				"This api is designed for stock market",
+				"1.0.0",
+				"http://www.zensar.com",
+				new Contact("Sanjay Ingole", "http://www.gpl.com", "sanjay.ingole@zensar.com"),
+				"GPL",
+				"http://gpllicense.com",
+				new ArrayList<VendorExtension>()
+				);
+	}
+
+}

@@ -1,0 +1,15 @@
+package com.olx.service;
+
+import java.util.List;
+
+import com.olx.dto.CategoryDTO;
+
+public class CategoryServiceImpl implements CategoryService{
+
+	@Override
+	public List<CategoryDTO> getCategories() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

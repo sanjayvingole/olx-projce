@@ -1,0 +1,33 @@
+package com.olx.service;
+
+import java.util.List;
+
+import com.olx.dto.UserDTO;
+
+public class UserServiceImpl implements UserService{
+
+	@Override
+	public String authenticateUser(UserDTO userDTO, String authToken) {
+
+		return null;
+	}
+
+	@Override
+	public UserDTO registerUser(UserDTO userDTO) {
+
+		return null;
+	}
+
+	@Override
+	public List<UserDTO> getuserDetail(String authToken) {
+
+		return null;
+	}
+
+	@Override
+	public List<UserDTO> getuserStatus(String status) {
+
+		return null;
+	}
+
+}

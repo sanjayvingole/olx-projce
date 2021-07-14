@@ -1,0 +1,9 @@
+package com.bank.dto;
+
+public class Stock {
+	private int id;
+	private String name;
+	private String marketName;
+	private double price;
+
+}

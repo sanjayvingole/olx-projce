@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.zensar&apos; to &apos;com.bank&apos;&#x0D;&#x0A;- Original project: &apos;springBootDemo&apos;&#x0D;&#x0A;- Original element: &apos;springBootDemo/src/main/java/com.zensar&apos;&#x0D;&#x0A;- Renamed element: &apos;springBootDemo/src/main/java/com.bank&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.zensar&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;com.zensar" name="com.bank" qualified="false" references="true" stamp="1624709306597" textual="false" version="1.0"/>
+</session>

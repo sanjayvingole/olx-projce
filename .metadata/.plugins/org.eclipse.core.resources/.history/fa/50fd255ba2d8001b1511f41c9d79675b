@@ -1,0 +1,14 @@
+package com.olx.service;
+
+import java.util.List;
+
+
+import com.olx.dto.UserDTO;
+
+public interface UserService {
+	String authenticateUser(UserDTO userDTO, String authToken);
+
+	public UserDTO registerUser(UserDTO userDTO);
+
+	public List<UserDTO> getuserDetail(String authToken);
+}

@@ -1,0 +1,31 @@
+package com.olx.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.olx.dto.AdvertiseDTO;
+
+public class AdvertiseServiceImpl implements AdvertiseService{
+
+	private static int id = 0;
+	private List<AdvertiseDTO> advertiseDTOList = new ArrayList<>();
+	
+	@Override
+	public List<AdvertiseDTO> getAllAdevertise(String authToken) {
+		
+		return null;
+	}
+
+	@Override
+	public AdvertiseDTO newAdvertise(AdvertiseDTO advertiseDTO, String authToken) {
+		
+		return null;
+	}
+
+	@Override
+	public AdvertiseDTO updateAdvertise(AdvertiseDTO advertiseDTO, Integer id, String authToken) {
+		
+		return null;
+	}
+
+}

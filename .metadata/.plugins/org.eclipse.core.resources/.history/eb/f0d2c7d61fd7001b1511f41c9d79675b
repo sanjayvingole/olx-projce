@@ -1,0 +1,31 @@
+package com.olx.dto;
+
+public class Advertise {
+	private Integer id;
+	private String title;
+	private Double price;
+	private String category;
+	private String description;
+	private String userName;
+	private String status;
+	private String createdDate;
+	private String modifiedDate;
+
+	public Advertise() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Advertise(Integer id, String title, Double price, String category, String description, String userName,
+			String status, String createdDate, String modifiedDate) {
+		this.id = id;
+		this.title = title;
+		this.price = price;
+		this.category = category;
+		this.description = description;
+		this.userName = userName;
+		this.status = status;
+		this.createdDate = createdDate;
+		this.modifiedDate = modifiedDate;
+	}
+
+}

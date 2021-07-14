@@ -1,0 +1,50 @@
+package com.bank.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.bank.dto.Stock;
+import com.bank.entity.StockEntity;
+import com.bank.repository.StockRepository;
+
+@Service
+public class StockServiceImpl implements StockService {
+
+	@Autowired
+	StockRepository stockRepository;
+
+	@Override
+	public List<Stock> getAllStocks() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Stock getStockById(int stockId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Stock createNewStock(Stock stock, String authToken) {
+		StockEntity stockEntity = new StockEntity(stock.getId(), stock.getName(), stock.getMarketName(),
+				stock.getPrice());
+		stockEntity=
+		return null;
+	}
+
+	@Override
+	public Stock updateStockById(Stock stock, int stockId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean deleteStockById(int stockId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

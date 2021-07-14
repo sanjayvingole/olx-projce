@@ -1,0 +1,30 @@
+package com.bank;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
+import org.springframework.boot.actuate.endpoint.annotation.ReadOperation;
+import org.springframework.stereotype.Component;
+
+@Component
+@Endpoint
+public class BugFixesReportIndicator {
+	static Map<String, List<String>> bugsMap = new HashMap<>();
+
+	@PostConstruct
+	public void initialize() {
+		bugsMap.put("v1", Arrays.asList("Window close not working", "Browser extension not getting added"));
+		bugsMap.put("v2", Arrays.asList("OLX app is restarting", "OLX database is down"));
+	}
+
+	@ReadOperation
+	public Map<String, List<String>> getBugFixesInfo() {
+		return bugsMap;
+	}
+
+}

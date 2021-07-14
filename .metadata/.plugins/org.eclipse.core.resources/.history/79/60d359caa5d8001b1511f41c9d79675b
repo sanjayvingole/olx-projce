@@ -1,0 +1,25 @@
+package com.olx.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.olx.dto.StatusDTO;
+import com.olx.service.StatusServiceImpl;
+
+@RestController
+public class StatusController {
+	List<StatusDTO> statusDTOs = new ArrayList<StatusDTO>();
+	@Autowired
+	StatusServiceImpl statusServiceImpl;
+
+	@GetMapping(value = "/advertise/status")
+	public ResponseEntity<List<StatusDTO>> getCategories() {
+		return new ResponseEntity<List<StatusDTO>>(statusDTOs, HttpStatus.OK);
+	}
+}

@@ -1,0 +1,6 @@
+package com.olx.dto;
+
+public class UserDTO {
+	private String userName;
+	private Integer password;
+}

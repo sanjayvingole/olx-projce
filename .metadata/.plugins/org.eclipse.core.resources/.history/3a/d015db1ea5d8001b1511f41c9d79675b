@@ -1,0 +1,11 @@
+package com.olx.service;
+
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+
+import com.olx.dto.CategoryDTO;
+
+public interface CategoryService {
+	List<CategoryDTO> getCategories();
+}

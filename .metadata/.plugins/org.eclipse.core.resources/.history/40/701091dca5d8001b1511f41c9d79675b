@@ -1,0 +1,10 @@
+package com.olx.service;
+
+import java.util.List;
+
+
+import com.olx.dto.StatusDTO;
+
+public interface StatusService {
+	List<StatusDTO> getCategories();
+}
