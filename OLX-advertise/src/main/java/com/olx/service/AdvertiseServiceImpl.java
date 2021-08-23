@@ -58,7 +58,7 @@ public class AdvertiseServiceImpl implements AdvertiseService {
 			String postedBy = tempMap.get("firstName") + " " + tempMap.get("lastName");
 			advertises.add(new AdvertiseDTO(advertiseEntity.getId(), advertiseEntity.getTitle(),
 					advertiseEntity.getDescription(), advertiseEntity.getPrice(), advertiseEntity.getCategory(),
-					hmapCategories.get(advertiseEntity.getCategory()), advertiseEntity.getCreatedDate(),
+					advertiseEntity.getCreatedDate(),
 					advertiseEntity.getModifiedDate(),advertiseEntity.getUsername(),
 					postedBy));
 		});
@@ -91,8 +91,7 @@ public class AdvertiseServiceImpl implements AdvertiseService {
 
 		advertiseEntities.stream().forEach((advertiseEntity) -> advertises.add(new AdvertiseDTO(advertiseEntity.getId(),
 				advertiseEntity.getTitle(), advertiseEntity.getDescription(), advertiseEntity.getPrice(),
-				advertiseEntity.getCategory(), hmapCategories.get(advertiseEntity.getCategory()),
-				advertiseEntity.getCreatedDate(), advertiseEntity.getModifiedDate(),
+				advertiseEntity.getCategory(), advertiseEntity.getCreatedDate(), advertiseEntity.getModifiedDate(),
 				advertiseEntity.getUsername(), (mapUser.get("firstName") + " " + mapUser.get("lastName")))));
 		return advertises;
 	}
