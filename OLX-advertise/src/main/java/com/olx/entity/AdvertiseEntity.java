@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 public class AdvertiseEntity {
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private String title;
 	private String description;
