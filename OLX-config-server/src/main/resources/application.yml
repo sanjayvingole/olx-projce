@@ -7,6 +7,6 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/sanjayvingole/olx-config
+          uri: https://github.com/sanjayvingole/olx-project
           username: sanjayvingole
           clone-on-start: true
