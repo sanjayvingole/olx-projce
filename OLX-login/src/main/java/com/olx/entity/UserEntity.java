@@ -28,11 +28,12 @@ public class UserEntity {
 	private String firstName;
 	@Column(name = "lastname")
 	private String lastName;
+	private String jwtToken;
 	
 	public UserEntity() {}
 	
 	public UserEntity(int id, String username, String password, String roles, String firstName,
-			String lastName) {
+			String lastName,String jwtToken) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -40,6 +41,7 @@ public class UserEntity {
 		this.roles = roles;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.jwtToken=jwtToken;
 	}
 	public int getId() {
 		return id;
@@ -78,11 +80,19 @@ public class UserEntity {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+	
+	public String getJwtToken() {
+		return jwtToken;
+	}
+
+	public void setJwtToken(String jwtToken) {
+		this.jwtToken = jwtToken;
+	}
 
 	@Override
 	public String toString() {
-		return "UserEntity [id=" + id + ", userName=" + username + ", password=" + password + ", active=" 
-				+ ", roles=" + roles + ", firstName=" + firstName + ", lastName=" + lastName + "]";
+		return "UserEntity [id=" + id + ", username=" + username + ", password=" + password + ", roles=" + roles
+				+ ", firstName=" + firstName + ", lastName=" + lastName + ", jwtToken=" + jwtToken + "]";
 	}
 
 }

@@ -29,15 +29,18 @@ public class UserServiceImpl implements UserService {
 		userDto.setFirstName(userEntity.getFirstName());
 		userDto.setLastName(userEntity.getLastName());
 		userDto.setUsername(userEntity.getUsername());
+		userDto.setJwtToken(userEntity.getJwtToken());
 		return userDto;
 	}
 
 	@Override
 	public UserDTO registerUser(RegisterRequest registerRequest) {
-		List<UserEntity> userEntityList = userRepository.findByUsername(registerRequest.getUsername());
-		if(userEntityList==null || userEntityList.size()==0) {
-			throw new UsernameAlreadyExistsException(registerRequest.getUsername());
-		}
+		/*
+		 * List<UserEntity> userEntityList =
+		 * userRepository.findByUsername(registerRequest.getUsername());
+		 * if(userEntityList==null || userEntityList.size()==0) { throw new
+		 * UsernameAlreadyExistsException(registerRequest.getUsername()); }
+		 */
 		UserEntity userEntity = new UserEntity();
 		userEntity.setFirstName(registerRequest.getFirstname());
 		userEntity.setLastName(registerRequest.getLastname());
@@ -49,6 +52,7 @@ public class UserServiceImpl implements UserService {
 		userDto.setFirstName(userEntity.getFirstName());
 		userDto.setLastName(userEntity.getLastName());
 		userDto.setUsername(userEntity.getUsername());
+		userDto.setJwtToken(userEntity.getJwtToken());
 		return userDto;
 	}
 

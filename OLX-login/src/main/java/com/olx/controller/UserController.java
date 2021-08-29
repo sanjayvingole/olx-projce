@@ -11,7 +11,6 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -78,9 +77,9 @@ public class UserController {
 		return new ResponseEntity<UserDTO>(userService.registerUser(registerRequest), HttpStatus.OK);
 	}
 	
-	@GetMapping(value="/user/list/{ids}", produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<UserDTO> findByUsernames(@PathVariable("ids") String usernames) {
-		return userService.findByUsernames(usernames);
+	@GetMapping(value="/user/list/{username}", produces=MediaType.APPLICATION_JSON_VALUE)
+	public List<UserDTO> findByUsernames(@PathVariable("username") String username) {
+		return userService.findByUsernames(username);
 	}
 	
 	@GetMapping(value="/user/{username}", produces=MediaType.APPLICATION_JSON_VALUE)
