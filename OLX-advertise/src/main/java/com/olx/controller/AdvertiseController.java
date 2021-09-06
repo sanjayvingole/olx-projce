@@ -63,7 +63,7 @@ public class AdvertiseController {
 			@RequestParam(required = false) String order,
 			@RequestParam(defaultValue = "0") int page,
 			@RequestParam(defaultValue = "3") int size) {
-   return advertiseService.findByText(page,size,title,category,status,price,dateCondition,onDate,fromDate,toDate,sortBy,order);
+   return advertiseService.findByText(page, size, title, category, status, price, dateCondition, onDate, fromDate, toDate, sortBy, order);
 }
 
 }

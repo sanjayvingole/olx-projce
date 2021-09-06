@@ -21,8 +21,6 @@ public class MasterDataController {
 	@Autowired
 	MasterDataService masterDataService;
 
-	List<StatusDTO> statusDTOs = new ArrayList<StatusDTO>();
-	List<CategoryDTO> categoryDTOs = new ArrayList<CategoryDTO>();
 
 	@GetMapping(value = "/category", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<CategoryDTO> getAllCategories() {
@@ -36,7 +34,7 @@ public class MasterDataController {
 
 	@GetMapping(value = "/masterdata/status")
 	public ResponseEntity<List<StatusDTO>> getStatus() {
-		statusDTOs = masterDataService.getStatus();
+		List<StatusDTO> statusDTOs = masterDataService.getStatus();
 		return new ResponseEntity<List<StatusDTO>>(statusDTOs, HttpStatus.OK);
 	}
 }
