@@ -8,18 +8,13 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
-@ToString
 public class AdvertiseDTO {
 	private long id;
 	private String title;
 	private String description;
 	private double price;
-	private long categories;
-	private String category;
+	private int categories;
+	private int status;
 	private LocalDate createdDate;
 	private LocalDate modifiedDate;
 	private String username;
@@ -29,7 +24,7 @@ public class AdvertiseDTO {
 		super();
 	}
 
-	public AdvertiseDTO(long id, String title, String description, double price, long categories, LocalDate createdDate,
+	public AdvertiseDTO(long id, String title, String description, double price, int categories,int status, LocalDate createdDate,
 			LocalDate modifiedDate, String username, String postedBy) {
 		super();
 		this.id = id;
@@ -37,6 +32,7 @@ public class AdvertiseDTO {
 		this.description = description;
 		this.price = price;
 		this.categories = categories;
+		this.status=status;
 		this.createdDate = createdDate;
 		this.modifiedDate = modifiedDate;
 		this.username = username;
@@ -75,20 +71,12 @@ public class AdvertiseDTO {
 		this.price = price;
 	}
 
-	public long getCategories() {
+	public int getCategories() {
 		return categories;
 	}
 
-	public void setCategories(long categories) {
+	public void setCategories(int categories) {
 		this.categories = categories;
-	}
-
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
 	}
 
 	public LocalDate getCreatedDate() {
@@ -122,11 +110,19 @@ public class AdvertiseDTO {
 	public void setPostedBy(String postedBy) {
 		this.postedBy = postedBy;
 	}
+	
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
 
 	@Override
 	public String toString() {
 		return "AdvertiseDTO [id=" + id + ", title=" + title + ", description=" + description + ", price=" + price
-				+ ", categories=" + categories + ", category=" + category + ", createdDate=" + createdDate
+				+ ", categories=" + categories + ", status=" + status + ", createdDate=" + createdDate
 				+ ", modifiedDate=" + modifiedDate + ", username=" + username + ", postedBy=" + postedBy + "]";
 	}
 

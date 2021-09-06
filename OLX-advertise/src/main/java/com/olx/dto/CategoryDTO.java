@@ -1,16 +1,39 @@
 package com.olx.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
-@AllArgsConstructor
-@Getter
-@Setter
-@ToString
-public class Category {
+public class CategoryDTO {
 	private long id;
-	private String name;
-	private String description;
+	private String category;
+
+	public CategoryDTO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public CategoryDTO(long id, String category) {
+		super();
+		this.id = id;
+		this.category = category;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	@Override
+	public String toString() {
+		return "CategoryDTO [id=" + id + ", category=" + category + "]";
+	}
+
 }

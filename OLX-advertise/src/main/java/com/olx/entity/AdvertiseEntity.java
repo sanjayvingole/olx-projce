@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.olx.dto.CategoryDTO;
+
 @Entity
 @Table(name = "advertises")
 
@@ -19,7 +21,8 @@ public class AdvertiseEntity {
 	private String title;
 	private String description;
 	private double price;
-	private long category;
+	private int category;
+	private int status;
 	@Column(name = "created_date")
 	private LocalDate createdDate;
 	@Column(name = "modified_date")
@@ -32,7 +35,7 @@ public class AdvertiseEntity {
 		// TODO Auto-generated constructor stub
 	}
 
-	public AdvertiseEntity(String title, String description, double price, long category, LocalDate createdDate,
+	public AdvertiseEntity(String title, String description, double price, int category,int status, LocalDate createdDate,
 			LocalDate modifiedDate, String username) {
 		super();
 		this.title = title;
@@ -42,6 +45,7 @@ public class AdvertiseEntity {
 		this.createdDate = createdDate;
 		this.modifiedDate = modifiedDate;
 		this.username = username;
+		this.status=status;
 	}
 
 	public long getId() {
@@ -76,11 +80,11 @@ public class AdvertiseEntity {
 		this.price = price;
 	}
 
-	public long getCategory() {
+	public int getCategory() {
 		return category;
 	}
 
-	public void setCategory(long category) {
+	public void setCategory(int category) {
 		this.category = category;
 	}
 
@@ -107,12 +111,20 @@ public class AdvertiseEntity {
 	public void setUsername(String username) {
 		this.username = username;
 	}
+	
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
 
 	@Override
 	public String toString() {
 		return "AdvertiseEntity [id=" + id + ", title=" + title + ", description=" + description + ", price=" + price
-				+ ", category=" + category + ", createdDate=" + createdDate + ", modifiedDate=" + modifiedDate
-				+ ", username=" + username + "]";
+				+ ", category=" + category + ", status=" + status + ", createdDate=" + createdDate + ", modifiedDate="
+				+ modifiedDate + ", username=" + username + "]";
 	}
 
 }
